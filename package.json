@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@babel/plugin-syntax-jsx": "^7.24.7",
-    "@reduxjs/toolkit": "^1.9.7",
+    "@reduxjs/toolkit": "^1.9.2",
     "@testing-library/user-event": "^13.5.0",
     "@types/node": "^16.18.12",
     "@types/react": "^18.0.28",
@@ -57,6 +57,19 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "jest": "^27.5.1",
+    "jest-transform-stub": "^2.0.0",
     "prettier": "2.8.3"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react",
+      "@babel/preset-typescript"
+    ]
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "babel-jest"
+    }
   }
 }
