@@ -1,17 +1,11 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
 import Header from '..'
-import { Provider } from 'react-redux'
-import { store } from '../../../store'
+import { renderizaComProvider } from '../../../utils/tests'
 
 describe('Teste para o componente header', () => {
   test('Deve renderizar corretamente', () => {
-    const { debug } = render(
-      <Provider store={store}>
-        <Header />
-      </Provider>
-    )
-    debug()
-    expect(screen.getByText('EBAC Games')).toBeInTheDocument()
+    renderizaComProvider(<Header />)
+    expect(screen.findByText('EBAC Games')).toBeInTheDocument()
   })
 })
